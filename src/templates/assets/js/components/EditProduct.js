@@ -12,7 +12,7 @@ axios.defaults.xsrfCookieName = "csrftoken";
 const CREATE_PRODUCT = "http://127.0.0.1:8000/product/create/";
 const FILE_ROOT = "http://127.0.0.1:8000/";
 
-const CreateProduct = (props) => {
+const EditProduct = (props) => {
   const [productVariantPrices, setProductVariantPrices] = useState([]);
   const [productName, setProductName] = useState("");
   const [productSKU, setProductSKU] = useState("");
@@ -26,7 +26,7 @@ const CreateProduct = (props) => {
       id: null,
     },
   ]);
-  console.log(typeof props.variants);
+  console.log(props);
   // handle click event of the Add button
   const handleAddClick = () => {
     let all_variants = JSON.parse(props.variants.replaceAll("'", '"')).map(
@@ -380,4 +380,4 @@ const CreateProduct = (props) => {
   );
 };
 
-export default CreateProduct;
+export default EditProduct;
